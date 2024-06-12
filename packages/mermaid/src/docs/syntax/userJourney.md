@@ -1,22 +1,50 @@
-# User Journey Diagram
+mermaid
+graph TD
+    A[Tratamiento] --> B[Terapia de combinación Artemisinina (ACT)]
+    A --> C[Cloroquina (CQ) y Primaquina (PQ)]
+    A --> D[Quinina y Artemisinina (IV o IM)]
+    A --> E[Tratamiento Intermitente Preventivo (IPT)]
+    A --> F[Derivados de Artemisinina]
+    A --> G[Tafenoquina]
+    A --> H[Monitoreo de la resistencia]
 
-> User journeys describe at a high level of detail exactly what steps different users take to complete a specific task within a system, application or website. This technique shows the current (as-is) user workflow, and reveals areas of improvement for the to-be workflow. (Wikipedia)
+    B --> B1[Artemether-lumefantrine (AR-LM)]
+    B --> B2[Artesunate amodiaquine (AS-AQ)]
+    B --> B3[Artesunate-mefloquine (AS-MQ)]
+    B1 --> B1a[Plasmodium falciparum no complicado]
+    B2 --> B2a[Plasmodium falciparum no complicado]
+    B3 --> B3a[Plasmodium falciparum no complicado]
+    B1a --> B1b[Según las guías específicas de dosificación para cada combinación]
+    B2a --> B2b[Según las guías específicas de dosificación para cada combinación]
+    B3a --> B3b[Según las guías específicas de dosificación para cada combinación]
 
-Mermaid can render user journey diagrams:
+    C --> C1[Cloroquina (CQ)]
+    C --> C2[Primaquina (PQ)]
+    C1 --> C3[Plasmodium vivax en regiones sin resistencia a la cloroquina]
+    C2 --> C3
+    C3 --> C4[CQ: 25 mg/kg de peso en 3 días]
+    C3 --> C5[PQ: 0.25 mg/kg día bajo supervisión]
 
-```mermaid-example
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
-```
+    D --> D1[Quinina]
+    D --> D2[Artemisinina]
+    D1 --> D3[Malaria severa]
+    D2 --> D3
+    D3 --> D4[Administración intravenosa (IV) o intramuscular (IM) hasta que el paciente pueda tomar pastillas]
 
-Each user journey is split into sections, these describe the part of the task
-the user is trying to complete.
+    E --> E1[Sulfadoxina-primetamina (S/P)]
+    E1 --> E2[Mujeres embarazadas en zonas de alta transmisión]
+    E2 --> E3[Al menos dos veces en el segundo y tercer trimestre, tres veces si hay infección con VIH]
 
-Tasks syntax is `Task name: <score>: <comma separated list of actors>`
+    F --> F1[Artemetero]
+    F --> F2[Dihidroartemisinina]
+    F --> F3[Artesunato]
+    F1 --> F4[Formas eritrocíticas y gametocitos del parásito]
+    F2 --> F4
+    F3 --> F4
+    F4 --> F5[Actúan rápido, afectan eritrocitos y gametocitos mediante la producción y liberación de radicales libres]
+
+    G --> G1[Tafenoquina]
+    G1 --> G2[Más eficaz y menos tóxica que la primaquina, aprobada para personas mayores de 16 años]
+    G2 --> G3[Vida media de 1-2 semanas]
+
+    H --> H1[Evaluación in vitro, ensayos clínicos y marcadores moleculares]
